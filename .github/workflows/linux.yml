@@ -1,0 +1,28 @@
+name: Linux validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+      UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+    steps:
+      - name: Check out project
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - name: Configure with sanitizers and warnings as errors
+        run: cmake -S . -B build-linux -DUSE_P2_REFERENCE=OFF -DMH_WERROR=ON -DMH_SANITIZE=ON
+      - name: Build
+        run: cmake --build build-linux -j 2
+      - name: Run all suites and print measurements
+        run: ctest --test-dir build-linux --verbose --output-on-failure
