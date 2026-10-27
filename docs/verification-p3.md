@@ -57,11 +57,10 @@ macOS sanitizer results do not establish that Linux leak detection passes.
 
 ## Remaining submission details
 
-1. Add your name and review/personalize `docs/design-log-p3.md`, including the AI
+1. Review/personalize `docs/design-log-p3.md`, including the AI
    assistance disclosure. Be ready to explain the implementation.
-2. The private Project 3 repository is
+2. The public Project 3 repository is
    `https://github.com/Danialkhan15/ece309-project3`, also recorded in `github.txt`.
-   Give the course staff access as required by the submission instructions.
 3. Re-run Linux validation after implementation changes; the current source has
    passed the check above.
 4. After any edits, recreate `github.zip` from the project source. Exclude build

@@ -5,11 +5,11 @@
 commit `fc26d7ce3cd86d2c8450af449ec6cd94c90f48a3`, selected with
 `USE_P2_REFERENCE=OFF`. The two Conversation and two SentinelScanner files were
 copied into P3; P3's provided `message.h` was retained.
-**Author:** [add your name before submission]
+**Author:** Danial Khan
 **Tools used:** OpenAI Codex implemented the three P3 components, expanded the
 tests, carried over the P2 files, and drafted this log. CMake, Apple Clang, CTest, AddressSanitizer, and
 UndefinedBehaviorSanitizer built and checked the project. GitHub CLI published
-the private repository; GitHub Actions checked Linux with leak detection. Python
+the public repository; GitHub Actions checked Linux with leak detection. Python
 and Git packaged backups. This is an AI-assisted draft to review and personalize
 before submission.
 
