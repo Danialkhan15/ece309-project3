@@ -6,7 +6,7 @@ from the supplied Project 2 repository:
 `fc26d7ce3cd86d2c8450af449ec6cd94c90f48a3`. The four required P2 files are now in
 `include/core/` and `src/core/`. P3's provided `message.h` is retained.
 
-## Required Linux check
+## Linux validation
 
 Run these commands from the project directory on a department Linux machine,
 WSL2, or a Linux VM:
@@ -18,8 +18,12 @@ ASAN_OPTIONS=detect_leaks=1 ctest --test-dir build-linux --output-on-failure
 ./build-linux/test_p3
 ```
 
-Linux verification has not been performed in this workspace: the available host
-is macOS and no Linux container runtime was found.
+Linux verification passed on October 26, 2026, through
+[GitHub Actions](https://github.com/Danialkhan15/ece309-project3/actions/runs/40431059599).
+The hosted Ubuntu runner built with warnings as errors and ASan/UBSan, then
+passed all four CTest suites with `ASAN_OPTIONS=detect_leaks=1:halt_on_error=1`
+and `UBSAN_OPTIONS=halt_on_error=1:print_stacktrace=1`. The workflow is in
+`.github/workflows/linux.yml` and runs automatically for pushes and pull requests.
 
 ## Completed local verification
 
@@ -58,7 +62,8 @@ macOS sanitizer results do not establish that Linux leak detection passes.
 2. The private Project 3 repository is
    `https://github.com/Danialkhan15/ece309-project3`, also recorded in `github.txt`.
    Give the course staff access as required by the submission instructions.
-3. Complete the Linux check above.
+3. Re-run Linux validation after implementation changes; the current source has
+   passed the check above.
 4. After any edits, recreate `github.zip` from the project source. Exclude build
    directories and the previous ZIP itself. The supplied ZIP contains the source,
    tests, reference implementation, scripts, workspace fixtures, and docs; it

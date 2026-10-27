@@ -8,8 +8,10 @@ copied into P3; P3's provided `message.h` was retained.
 **Author:** [add your name before submission]
 **Tools used:** OpenAI Codex implemented the three P3 components, expanded the
 tests, carried over the P2 files, and drafted this log. CMake, Apple Clang, CTest, AddressSanitizer, and
-UndefinedBehaviorSanitizer built and checked the project. Python packaged the
-backup. This is an AI-assisted draft to review and personalize before submission.
+UndefinedBehaviorSanitizer built and checked the project. GitHub CLI published
+the private repository; GitHub Actions checked Linux with leak detection. Python
+and Git packaged backups. This is an AI-assisted draft to review and personalize
+before submission.
 
 ## 1. Hash table
 
@@ -90,5 +92,5 @@ A future interface could give each tool one immutable registration name instead
 of repeatedly returning names by value. The current entry caches its key, but
 also duplicates the tool's name storage. An immutable name contract would make
 that ownership and identity relationship clearer. The fixed public API is
-preserved here. Local sanitizer and golden-session checks passed on macOS;
-Linux leak-detection verification remains outstanding.
+preserved here. Sanitizer and golden-session checks passed on macOS and Linux;
+the GitHub Actions run also passed with leak detection enabled.
