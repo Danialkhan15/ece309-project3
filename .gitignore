@@ -1,0 +1,4 @@
+/build/
+/build-*/
+/github.zip
+.DS_Store
