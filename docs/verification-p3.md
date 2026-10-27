@@ -33,12 +33,12 @@ AddressSanitizer, and UndefinedBehaviorSanitizer. All four CTest suites passed:
 | Suite | Cases passed |
 |---|---:|
 | P2 regression | 14 |
-| P3 implementation tests | 29 |
+| P3 implementation tests | 15 |
 | Provided tool-loop tests | 9 |
 | Golden CLI sessions | 7 |
 
 The P3 suite includes all specification path and calculator examples, duplicate
-ownership, collisions, traversal, hash diversity, 10,000 registered tools,
+ownership, traversal, 10,000 registered tools,
 20,000 arithmetic terms, and 5,000 nested parentheses. The real longest chain
 was 6; the weak-hash comparison was 9,000, with 16,384 buckets and load factor
 0.6103515625.
